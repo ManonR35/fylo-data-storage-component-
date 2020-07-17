@@ -1,0 +1,188 @@
+body{
+    margin: 0;
+    background: url(images/bg-mobile.png) no-repeat;
+    font-family: raleway;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    font-size: 14px;
+}
+
+@font-face{
+    font-family: raleway; 
+    src: url(font/Raleway-VariableFont_wght.ttf);
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+}
+
+.storage_description, .storage_capacity{
+    color: hsl(243, 100%, 93%);
+}
+
+.icon{
+    background-color: hsl(228, 56%, 26%);
+    border-radius: 10px 100px 10px 10px;
+    height: 200px;
+    padding: 0 35px;
+}
+
+.icon_icon{
+    display: flex;
+    justify-content: flex-start; 
+}
+
+.icon_icon div{
+    background-color: hsl(229, 57%, 11%);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+
+
+/* ----- deuxième div ---------- */ 
+.storage{
+    background-color: hsl(228, 56%, 26%);
+    border-radius: 10px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 30px 60px 30px;
+    position: relative;
+    height: 120px;
+}
+
+.icon, .storage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; 
+    margin: 10px 20px;
+}
+
+.storage_bar{
+    height: 15px;
+    width: 270px;
+    background-color: hsl(229, 57%, 11%);
+    border-radius: 13px;
+    display: flex;
+    border: solid hsl(229, 57%, 11%);
+}
+
+.storage_bar--gradient{
+    background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    height: 100%;
+    width: 81.5%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.storage_bar--ball{
+    background-color: white;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    margin: 2px;
+}
+
+.storage_capacity{
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;    
+}
+
+.storage_used{
+    background-color: white;
+    border-radius: 10px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+    position: absolute;
+    top: 140px;
+}
+
+.storage_used--big{
+    font-weight: 900;
+    font-size: 40px;
+}
+
+.storage_used--pale_blue{
+    color: hsl(229, 7%, 55%);
+    font-weight: bold;
+    text-align: center;
+    font-size: 12px;
+}
+
+
+/* -------------- droits --------------- */ 
+.attribution{
+    position: fixed; 
+    bottom: 0; 
+    color: white;
+    flex: initial;
+}
+
+/* -------------- media queries -------------- */ 
+@media (min-width: 375px){
+    body{
+        background: url(images/bg-desktop.png) no-repeat;
+        background-color: hsl(229, 57%, 11%);
+        background-position: bottom;
+        height: 800px;
+    }
+}
+
+@media (min-width: 1000px){
+    .main{
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .icon{
+        width: 270px;
+        height: 200px;
+    }
+
+    .storage{
+        width: 600px;
+        height: 150px;
+        justify-content: center;   
+        box-sizing: border-box; 
+        padding: 20px 50px 0 50px;
+        align-items: flex-start;  
+        top: 25px;      
+    }
+
+    .storage_used{
+        top: -50px; 
+        left: 355px; 
+        width: 200px; 
+    }
+
+    .storage_used::after{
+        content: '';
+        border-top:30px solid white;
+        border-left: 30px solid transparent;
+        position: absolute;
+        top: 65px;
+        right: 0px;
+    }
+
+    .storage_bar{
+        width: 500px;
+    }
+}
